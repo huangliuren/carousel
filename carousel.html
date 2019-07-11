@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>千与千寻</title>
+        <style>
+            .ren-item.ren-highlight img {
+                width: 150px;
+                height: 150px;
+            }
+            img {
+                /*transition 这个 css 指定了某个属性发生变化的时候自动使用动画效果和动画时间*/
+                transition: width 1s, height 1s;
+            }
+            .ren-item img {
+                width: 100px;
+                height: 100px;
+            }
+
+            /*3. 轮播图*/
+            .ren-slide {
+                position: relative;
+                width: 800px;
+            }
+            .ren-slide-image {
+                display: none;
+            }
+            /*ren-slide-image*/
+            .ren-active {
+                display: inline-block;
+            }
+            .ren-slide-button {
+                right: 0;
+                width: 30px;
+                height: 50px;
+                border: 0;
+                color: #fff;
+                opacity: 0.3;
+                background: #000;
+                outline: none;
+            }
+            .ren-slide-button:hover {
+                cursor: pointer;
+            }
+            .ren-slide-button.ren-left {
+                left: 0;
+            }
+            .ren-slide-button.ren-right {
+                right: 159px;
+            }
+            /*
+              垂直居中
+             */
+            .ren-vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            /*
+            水平居中
+            */
+            .ren-slide-indicators {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 10px;
+                text-align: center;
+            }
+            .ren-slide-indi {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: red;
+            }
+            .ren-white {
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ren-3">
+            <div class="ren-slide" data-imgs="5" data-active="0">
+                <img id="id-renimage-0" class="ren-slide-image ren-active" src="pics/1.jpg" alt="">
+                <img id="id-renimage-1" class="ren-slide-image" src="pics/2.jpg" alt="">
+                <img id="id-renimage-2" class="ren-slide-image" src="pics/3.jpg" alt="">
+                <img id="id-renimage-3" class="ren-slide-image" src="pics/4.jpg" alt="">
+                <img id="id-renimage-4" class="ren-slide-image" src="pics/5.jpg" alt="">
+
+                <button class="ren-slide-button ren-left ren-vertical-center" data-offset="-1">&lt;</button>
+                <button class="ren-slide-button ren-right ren-vertical-center" data-offset="1">&gt;</button>
+                <div class="ren-slide-indicators">
+                    <div id="id-indicator-0" data-index="0" class="ren-slide-indi ren-white"></div>
+                    <div id="id-indicator-1" data-index="1" class="ren-slide-indi"></div>
+                    <div id="id-indicator-2" data-index="2" class="ren-slide-indi"></div>
+                    <div id="id-indicator-3" data-index="3" class="ren-slide-indi"></div>
+                    <div id="id-indicator-4" data-index="4" class="ren-slide-indi"></div>
+                </div>
+            </div>
+        </div>
+        <script src="all.js"></script>
+        <script src="ren.js"></script>
+    </body>
+</html>
